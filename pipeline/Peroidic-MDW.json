@@ -1,0 +1,41 @@
+{
+	"name": "Peroidic-MDW",
+	"properties": {
+		"activities": [
+			{
+				"name": "MDW",
+				"type": "SynapseNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebook": {
+						"referenceName": "MDW",
+						"type": "NotebookReference"
+					},
+					"snapshot": true,
+					"sparkPool": {
+						"referenceName": "sparkr1mjvsl",
+						"type": "BigDataPoolReference"
+					},
+					"executorSize": "Small",
+					"conf": {
+						"spark.dynamicAllocation.minExecutors": 2,
+						"spark.dynamicAllocation.maxExecutors": 4
+					},
+					"driverSize": "Small",
+					"numExecutors": 2
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-10-25T07:02:42Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}
